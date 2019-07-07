@@ -11,8 +11,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnKeluar;
-    FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         btnKeluar = findViewById(R.id.btn_Logout);
         btnKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intentToMain = new Intent(HomeActivity.this, MainActivity.class);
                 startActivity(intentToMain);

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(MainActivity.this,"Anda Gagal Login, Silahkan Cek email/Kata Sandi Anda",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this,"User Telah Terdaftar",Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 startActivity(new Intent(MainActivity.this,HomeActivity.class));

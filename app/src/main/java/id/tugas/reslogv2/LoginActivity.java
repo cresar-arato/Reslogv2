@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(i);
                 }
                 else {
-                    Toast.makeText(LoginActivity.this,"Tolong Login",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Silahkan Login",Toast.LENGTH_SHORT).show();
                 }
             }
         };
