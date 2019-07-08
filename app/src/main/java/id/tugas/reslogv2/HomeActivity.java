@@ -20,9 +20,11 @@ public class HomeActivity extends AppCompatActivity {
         btnKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intentToMain = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(intentToMain);
+                finish();
+                System.exit(0);
+                //FirebaseAuth.getInstance().signOut();
+                //Intent intentToMain = new Intent(HomeActivity.this, MainActivity.class);
+                //startActivity(intentToMain);
             }
         });
     }

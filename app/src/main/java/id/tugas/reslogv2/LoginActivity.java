@@ -95,9 +95,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart(){
-    super.onStart();
-    mFirebaseAuth.addAuthStateListener(mAuthStateListener);
-    }
+    //@Override
+    //protected void onStart(){
+    //super.onStart();
+    //mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    //}
 }
