@@ -37,36 +37,43 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = IdEmail.getText().toString();
                 String pass = katasandi.getText().toString();
+                //jika email kosong
                 if(email.isEmpty()){
                     IdEmail.setError("Masukkan Email Anda");
                     IdEmail.requestFocus();
                 }
+                //jika email kosong
                 else if(pass.isEmpty()) {
                     katasandi.setError("Masukkan Kata Sandi Anda");
                     katasandi.requestFocus();
                 }
+                //jika email dan pass kosong
                 else if(email.isEmpty() && pass.isEmpty()) {
                     Toast.makeText(MainActivity.this,"Silahkan Isi Email dan Kata Sandi Anda",Toast.LENGTH_SHORT).show();
                 }
+                //jika email dan pass sudah terisi dan request ke firebase
                 else if(!(email.isEmpty() && pass.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            //jika user telah terdaftar kedalam firebase
                             if(!task.isSuccessful()){
                                 Toast.makeText(MainActivity.this,"User Telah Terdaftar",Toast.LENGTH_SHORT).show();
                             }
+                            //user dan pass yang belum terdaftar akan didaftarkan ke firebase
                             else {
                                 startActivity(new Intent(MainActivity.this,HomeActivity.class));
                             }
                         }
                     });
                 }
+                //debug error jika semua opsi diatas tidak bisa berfungsi
                 else{
                     Toast.makeText(MainActivity.this,"Error!1!1!1",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
+        // dari MainActivity ke LoginActivity
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

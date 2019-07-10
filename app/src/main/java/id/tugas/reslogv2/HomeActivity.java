@@ -22,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
                 System.exit(0);
+
+                //code dibawah sengaja di disable untuk menjegah re-login tanpa masukan user dan pass
                 //FirebaseAuth.getInstance().signOut();
                 //Intent intentToMain = new Intent(HomeActivity.this, MainActivity.class);
                 //startActivity(intentToMain);
