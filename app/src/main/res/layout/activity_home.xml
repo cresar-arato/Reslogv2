@@ -6,10 +6,11 @@
     android:scaleType="fitCenter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/lg_stikom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -17,6 +18,8 @@
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="19dp"
         android:src="@drawable/logo_stikom"
+        android:clickable="true"
+        android:onClick="imageClick"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,34 +37,24 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_Logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/lg_stikom" />
 
     <Button
         android:id="@+id/btn_Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="113dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="104dp"
         android:text="Keluar"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="@drawable/btn_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/btn_Menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="307dp"
-        android:layout_marginBottom="59dp"
-        android:text="Menu"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,22 +11,13 @@ import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
-    Button btnKeluar, btnMenu;
+    Button btnKeluar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        btnMenu = findViewById(R.id.btn_Menu);
         btnKeluar = findViewById(R.id.btn_Logout);
-
-        btnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intenttomenu = new Intent(HomeActivity.this,MenuActivity.class);
-                startActivity(intenttomenu);
-            }
-        });
 
         btnKeluar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,5 +32,9 @@ public class HomeActivity extends AppCompatActivity {
                 //startActivity(intentToMain);
             }
         });
+    }
+    public void imageClick(View view){
+        Intent intenttomenu = new Intent(HomeActivity.this,MenuActivity.class);
+        startActivity(intenttomenu);
     }
 }

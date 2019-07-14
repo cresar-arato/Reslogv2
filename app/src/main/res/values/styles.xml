@@ -9,4 +9,11 @@
         <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
 
+    <style name="SplashActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/splashAccent</item>
+        <item name="colorPrimary">@color/splashAccent</item>
+        <item name="colorPrimaryDark">@color/splashAccent</item>
+        <item name="android:navigationBarColor">@color/splashAccent</item>
+    </style>
+
 </resources>

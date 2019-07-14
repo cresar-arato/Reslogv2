@@ -41,6 +41,7 @@
             <!-- Row 1 -->
             <!-- Kolom 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_jdwl_kuliah"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -48,9 +49,8 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                app:cardBackgroundColor="@color/colorAccent">
+                app:cardBackgroundColor="@color/colorAccent"
+                app:cardCornerRadius="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -86,7 +86,6 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 app:cardBackgroundColor="@color/colorAccent">
 
                 <LinearLayout
@@ -125,7 +124,6 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 app:cardBackgroundColor="@color/colorAccent">
 
                 <LinearLayout
