@@ -2,14 +2,14 @@ package id.tugas.reslogv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainTugasActivity extends AppCompatActivity {
 
-    private Button btCreateDB;
-    private Button btViewDB;
+    private Button btCreateDB, btViewDB, btKembaliDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainTugasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(InputTugasActivity.getActIntent(MainTugasActivity.this));
+                finish();
             }
         });
 
@@ -30,6 +31,7 @@ public class MainTugasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(ReadTugasActivity.getActIntent(MainTugasActivity.this));
+                finish();
             }
         });
     }

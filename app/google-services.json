@@ -44,14 +44,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "405781949772-qu30lcuq7q97r9b7o2l3539u8h55rko8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "id.tugas.reslogv2",
-            "certificate_hash": "0dd2f0de45ffe6c89276d112aef9f570126069ea"
-          }
-        },
-        {
           "client_id": "405781949772-6r3m50h6l6rkm2p6fj7urm82nnsfus8j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

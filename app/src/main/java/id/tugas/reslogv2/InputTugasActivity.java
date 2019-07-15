@@ -26,8 +26,7 @@ public class InputTugasActivity extends AppCompatActivity {
     // variable yang merefers ke Firebase Realtime Database
     private DatabaseReference database;
 
-    // variable fields EditText dan Button
-    private Button btSave;
+    private Button btSave,btKembali;
     private EditText tvmatakuliah;
     private EditText tvdetailtugas;
 
@@ -63,6 +62,31 @@ public class InputTugasActivity extends AppCompatActivity {
     private boolean isEmpty(String s) {
         // Cek apakah ada fields yang kosong, sebelum disubmit
         return TextUtils.isEmpty(s);
+    }
+
+    private void updateTugas(modelTugas tugas) {
+        /**
+         * Baris kode yang digunakan untuk mengupdate data tugas
+         * yang sudah dimasukkan di Firebase Realtime Database
+         */
+        database.child("barang") //akses parent index, ibaratnya seperti nama tabel
+                .child(tugas.getKey()) //select barang berdasarkan key
+                .setValue(tugas) //set value barang yang baru
+                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                        /**
+                         * Baris kode yang akan dipanggil apabila proses update tugas sukses
+                         */
+                        Snackbar.make(findViewById(R.id.btn_simpan), "Tugas Berhasil diperbaharui", Snackbar.LENGTH_LONG).setAction("Oke", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                finish();
+                            }
+                        }).show();
+                    }
+                });
     }
 
     private void submitTugas(modelTugas tugas) {

@@ -1,5 +1,4 @@
 package id.tugas.reslogv2.model;
-
 import java.io.Serializable;
 
 public class modelTugas implements Serializable {

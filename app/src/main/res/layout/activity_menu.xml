@@ -117,6 +117,7 @@
             <!-- Row 2 -->
             <!-- Kolom 1 -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_absensi"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -144,6 +145,43 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Absensi"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Kolom 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_home"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/colorAccent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="0dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_um" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Menu Utama"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"

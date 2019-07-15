@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.tugas.reslogv2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_um"
@@ -9,17 +11,17 @@
         android:roundIcon="@drawable/ic_um"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AbsensiActivity"></activity>
         <activity android:name=".MainTugasActivity" />
         <activity android:name=".InputTugasActivity" />
         <activity android:name=".ReadTugasActivity" />
+        <activity android:name=".DetailTugasActivity" />
         <activity android:name=".JadwalKuliahActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".LoginActivity" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashActivityTheme">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

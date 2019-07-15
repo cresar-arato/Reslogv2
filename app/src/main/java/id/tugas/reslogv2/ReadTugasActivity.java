@@ -3,17 +3,23 @@ package id.tugas.reslogv2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
-import id.tugas.reslogv2.AdapterTugas;
+import id.tugas.reslogv2.adapter.AdapterTugas;
 import id.tugas.reslogv2.model.modelTugas;
 
 public class ReadTugasActivity extends AppCompatActivity {
@@ -33,7 +39,6 @@ public class ReadTugasActivity extends AppCompatActivity {
          * Mengeset layout
          */
         setContentView(R.layout.activity_read_tugas);
-
         /**
          * Inisialisasi RecyclerView & komponennya
          */
@@ -96,5 +101,24 @@ public class ReadTugasActivity extends AppCompatActivity {
 
     public static Intent getActIntent(Activity activity){
         return new Intent(activity, ReadTugasActivity.class);
+    }
+
+    public void onDeleteData(modelTugas tugas, final int position) {
+        /**
+         * Kode ini akan dipanggil ketika method onDeleteData
+         * dipanggil dari adapter lewat interface.
+         * Yang kemudian akan mendelete data di Firebase Realtime DB
+         * berdasarkan key barang.
+         * Jika sukses akan memunculkan Toast
+         */
+        if(database!=null){
+            database.child("tugas").child(tugas.getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(ReadTugasActivity.this,"Berhasil dihapus", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        }
     }
 }

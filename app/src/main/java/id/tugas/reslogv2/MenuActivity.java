@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -31,6 +32,29 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        CardView Absensi=findViewById(R.id.card_absensi);
+        Absensi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent absensi = new Intent(MenuActivity.this,AbsensiActivity.class);
+                startActivity(absensi);
+            }
+        });
 
+        CardView Home=findViewById(R.id.card_home);
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(MenuActivity.this,HomeActivity.class);
+                startActivity(home);
+            }
+        });
+
+    }
+
+    //mematikan tombol kembali
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "Silahkan Tekan Tombol Keluar", Toast.LENGTH_SHORT).show();
     }
 }

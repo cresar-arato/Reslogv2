@@ -30,8 +30,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                //Clear Semua Activity, dan memulai Activity baru
+                Intent i = new Intent(HomeActivity.this, LoginActivity.class);        // Specify any activity here e.g. home or splash or login etc
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtra("EXIT", true);
+                startActivity(i);
                 finish();
-                System.exit(0);
 
                 //code dibawah sengaja di disable untuk mencegah re-login tanpa masukan user dan pass
                 //FirebaseAuth.getInstance().signOut();
@@ -43,5 +49,6 @@ public class HomeActivity extends AppCompatActivity {
     public void imageClick(View view){
         Intent intenttomenu = new Intent(HomeActivity.this,MenuActivity.class);
         startActivity(intenttomenu);
+        finish();
     }
 }
