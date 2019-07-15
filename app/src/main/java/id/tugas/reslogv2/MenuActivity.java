@@ -2,7 +2,6 @@ package id.tugas.reslogv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +19,15 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent jadwalkuliah = new Intent(MenuActivity.this,JadwalKuliahActivity.class);
                 startActivity(jadwalkuliah);
+            }
+        });
+
+        CardView Tugas=findViewById(R.id.card_tugas);
+        Tugas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent tugas = new Intent(MenuActivity.this,MainTugasActivity.class);
+                startActivity(tugas);
             }
         });
 
