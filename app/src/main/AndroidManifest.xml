@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/ic_um"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MainTugasActivity" />
+        <activity android:name=".InputTugasActivity" />
+        <activity android:name=".ReadTugasActivity" />
         <activity android:name=".JadwalKuliahActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".MainActivity" />
